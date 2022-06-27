@@ -1,0 +1,250 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background: brown;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  column-gap: 100px;
+}
+.header__input{
+  margin-top: 20px;
+  height: 40px;
+  max-width: 400px;
+  width: 400px;
+  border-radius: 3px;
+  margin-right: 15px;
+  border: 0px;
+}
+.header__text{
+  color: white;
+  font-size: 22px;
+  padding-top: 20px;
+  padding-left: 15px;
+  cursor: pointer;
+}
+.home__title{
+  padding-top: 120px;
+  padding-bottom: 100px;
+  text-align: center;
+  color: white;
+  background-color: rgb(66, 60, 60);
+}
+.film__img{
+  width: 250px;
+  height: 360px;
+  border-radius: 3px;
+}
+.film__list{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 250px);
+  column-gap: 100px;
+  row-gap: 150px;
+  background-color: rgb(66, 60, 60);
+}
+.img__mask{
+  position: absolute;
+  background: black;
+  width: 250px;
+  height: 360px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.movie{
+  background-color: rgb(66, 60, 60);
+  padding-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 15px;
+}
+.movie__countries{
+  font-size: 20px;
+  color: chocolate;
+  padding-bottom: 15px;
+}
+.movie__year{
+  font-size: 20px;
+  color: white;
+  padding-bottom: 15px;
+}
+.movie__name{
+  color: white;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.movie__genres{
+  color: yellow;
+  font-size: 20px;
+  font-weight: 500;
+}
+.movie__rating{
+  font-size: 20px;
+  color: yellow;
+  padding-bottom: 15px;
+}
+.movie__originalname{
+  color: white;
+  font-size: 22px;
+  padding-bottom: 15px;
+}
+.movie__body{
+  padding-top: 80px;
+  padding-left: 15px;
+}
+.movie__desc{
+  font-size: 20px;
+  word-break: break-all;
+  max-width: 480px;
+  min-width: 200px;
+  color: orange;
+  padding-bottom: 20px;
+}
+a{
+  color: orange;
+  font-size: 18px;
+}
+.filmnotfound__text{
+  text-align: center;
+  padding-top: 300px;
+  color: white;
+  background-color: rgb(66, 60, 60);
+  padding-bottom: 30%;
+}
+.footer__text{
+  font-size: 18px;
+  text-align: center;
+  color: white;
+}
+.footer{
+  height: 80px;
+  background: gray;
+}
+.home__btn{
+  padding-top: 15px;
+  text-align: center;
+  background-color: rgb(66, 60, 60);
+  color: orange;
+  cursor: pointer;
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+.img__mask:hover{
+  opacity: 0.4;
+}
+.img__mask{
+  cursor: pointer;
+}
+.film{
+  max-height: 600px;
+  position: relative;
+  max-width: 250px;
+}
+.film__name{
+  padding-top: 5px;
+  color: white;
+  text-align: center;
+  padding-bottom: 15px;
+}
+.film__bottom{
+  display: flex;
+}
+.film__genres{
+  text-align: center;
+  color: yellow;
+}
+@media (max-width: 600px){
+  .movie{
+    background-color: rgb(66, 60, 60);
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .movie__body{
+    text-align: center;
+  }
+}
